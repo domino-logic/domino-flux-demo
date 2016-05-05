@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "author": "Brice LEROY",
   "scripts": {
-    "start": "watchify -v -o js/bundle.js js/app.js",
+    "start": "npm run watch & npm run serve",
+    "watch": "watchify -v -o js/bundle.js js/app.js",
+    "serve": "ws --spa index.html",
     "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
@@ -25,6 +27,7 @@
     "browserify": "^6.2.0",
     "envify": "^3.0.0",
     "jest-cli": "^0.4.3",
+    "local-web-server": "^1.2.3",
     "reactify": "^0.15.2",
     "uglify-js": "~2.4.15",
     "watchify": "^2.1.1"
