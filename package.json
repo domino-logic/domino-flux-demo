@@ -4,7 +4,7 @@
   "author": "Brice LEROY",
   "scripts": {
     "start": "npm run watch & npm run serve",
-    "watch": "watchify -v -o static/ads/js/bundle.js js/app.js",
+    "watch": "watchify -v -o static/ads/js/bundle.js src/ads/js/app.js",
     "serve": "node index.js",
     "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"

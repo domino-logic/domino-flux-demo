@@ -18,6 +18,6 @@ app.start(init)
 
 function init (err, app){
   app.domain('ads')
-    .actor('create', handler.adCreateHandler)
+    .actor('create', handler.createAdHandler)
     .watcher('created', handler.adCreatedHandler)
 }
