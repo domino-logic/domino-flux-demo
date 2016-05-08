@@ -10,10 +10,12 @@
     "test": "jest"
   },
   "description": "Example Domino-Flux architecture.",
-  "repository": "https://github.com/facebook/flux",
+  "repository": "https://github.com/domino-logic/domino-flux-demo",
   "main": "js/app.js",
+  "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "domino-client-service": "git+https://github.com/domino-logic/domino-client-service.git",
     "flux": "^2.1.1",
     "keymirror": "^0.1.1",
     "object-assign": "^4.1.0",

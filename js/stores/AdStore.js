@@ -33,18 +33,20 @@ class AdStore extends Store {
     switch (type) {
       case 'ad/created':
         _ads = _ads.concat(payload)
-        break;
+        break
 
       case 'ad/modified':
         ad = this.get(payload.id)
         Object.assign(ad, payload)
         ads = clone(ads)
+        break
 
       case 'ad/deleted':
         _ads = reject(_ads, {id: payload})
+        break
 
       default:
-        return;
+        return
     }
 
     return this.__emitChange();

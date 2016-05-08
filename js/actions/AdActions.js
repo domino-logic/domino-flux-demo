@@ -1,21 +1,28 @@
-const dispatcher = require('../dispatcher/dispatcher')
+import {dispatch} from '../dispatcher/dispatcher'
+import domino from '../domino'
 
-function newAd (){
-  const ad = {
-    id: Math.floor(Math.random() * 100000),
-    creationDate: new Date().toLocaleString(),
-    type: 'Social Ad',
-    name: 'Coca Cola',
-    paused: Math.random() > .5,
-  };
+export function createAd (ad){
+  domino.action('platform.ads.create', ad)
+}
 
-  dispatcher.dispatch({
+export function adCreated(ad){
+  dispatch({
     type:'ad/created',
     payload: ad
   })
-
 }
 
-module.exports = {
-  newAd
+export function setTeam(team) {
+  domino.setContext({team})
+}
+
+export function setAccount(account) {
+  domino.updateContext({account})
+}
+
+export default {
+  createAd,
+  adCreated,
+  setAccount,
+  setTeam,
 }
