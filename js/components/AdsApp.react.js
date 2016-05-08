@@ -9,8 +9,6 @@ import dominoActions from '../actions/dominoActions'
 
 function forgeAd(){
   return {
-    id: Math.floor(Math.random() * 100000),
-    creationDate: new Date().toLocaleString(),
     type: 'Social Ad',
     name: 'Coca Cola',
     paused: Math.random() > .5,

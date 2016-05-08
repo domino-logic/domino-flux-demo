@@ -2,7 +2,7 @@ import {dispatch} from '../dispatcher/dispatcher'
 import domino from '../domino'
 
 export function createAd (ad){
-  domino.action('platform.ads.create', ad)
+  domino.action('ads.create', ad)
 }
 
 export function adCreated(ad){

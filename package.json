@@ -4,8 +4,8 @@
   "author": "Brice LEROY",
   "scripts": {
     "start": "npm run watch & npm run serve",
-    "watch": "watchify -v -o js/bundle.js js/app.js",
-    "serve": "ws --spa index.html",
+    "watch": "watchify -v -o static/ads/js/bundle.js js/app.js",
+    "serve": "node index.js",
     "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
@@ -15,7 +15,9 @@
   "license": "MIT",
   "dependencies": {
     "classnames": "^2.2.5",
+    "domino-actor-service": "git+https://github.com/domino-logic/domino-actor-service.git",
     "domino-client-service": "git+https://github.com/domino-logic/domino-client-service.git",
+    "domino-web-service": "git+https://github.com/domino-logic/domino-web-service.git",
     "flux": "^2.1.1",
     "keymirror": "^0.1.1",
     "object-assign": "^4.1.0",
