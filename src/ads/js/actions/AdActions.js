@@ -3,6 +3,8 @@ import domino from '../domino'
 
 export function createAd (ad){
   domino.action('ads.create', ad)
+  .then((payload) => console.log(payload))
+  .catch((payload) => console.error(payload))
 }
 
 export function adCreated(ad){

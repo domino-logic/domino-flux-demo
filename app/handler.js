@@ -1,23 +1,28 @@
 const uuid = require('node-uuid');
 
 
-function createAdHandler(body, dispatch) {
-  ad = body.payload
+function createAdHandler(message, response, dispatch) {
+  ad = message.content.payload
   ad.id = uuid.v4()
   ad.creationDate = new Date().toISOString()
   ad.paused = Math.random() < .5
   ad.cpm = 1 + Math.random() * 2
   ad.type = 'Social Ad'
 
-  dispatch('created', ad)
+  if(Math.random() < .5){
+    response.ok(ad)
+    dispatch('created', ad)
+  }
+  else
+    response.error('Error!!!')
 }
 
-function adCreatedHandler(data, broadcast) {
-  broadcast('ads.adCreated', data.payload)
+function adCreatedHandler(message, broadcast) {
+  broadcast('ads.adCreated', message.content.payload)
 }
 
 
 module.exports = {
-  adCreateHandler,
+  createAdHandler,
   adCreatedHandler,
 }
