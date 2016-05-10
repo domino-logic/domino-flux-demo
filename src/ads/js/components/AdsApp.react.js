@@ -22,6 +22,10 @@ class AdsAppComponent extends React.Component {
     );
   }
 
+  getAds () {
+    AdActions.getAds();
+  }
+
   static getStores() {
     return [AdStore]
   }
@@ -41,6 +45,9 @@ class AdsAppComponent extends React.Component {
           <div className="col-xs-12">
             <button onClick={this.createAd} className="btn btn-primary">
               New Ad
+            </button>
+            <button onClick={this.getAds} className="btn btn-info">
+              get Ads
             </button>
           </div>
         </div>

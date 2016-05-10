@@ -19,6 +19,10 @@ class AdStore extends Store {
         _ads = _ads.concat(payload)
         break
 
+      case 'ad/received':
+        _ads = payload
+        break
+
       case 'ad/modified':
         ad = this.get(payload.id)
         Object.assign(ad, payload)
