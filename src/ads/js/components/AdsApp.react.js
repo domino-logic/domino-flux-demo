@@ -40,17 +40,20 @@ class AdsAppComponent extends React.Component {
     return (
       <div>
         <h1>Lets get started </h1>
-        <AdTable ads={this.state.ads}></AdTable>
+
         <div className="row">
           <div className="col-xs-12">
             <button onClick={this.createAd} className="btn btn-primary">
               New Ad
             </button>
+            {' '}
             <button onClick={this.getAds} className="btn btn-info">
               get Ads
             </button>
           </div>
         </div>
+
+        <AdTable ads={this.state.ads}></AdTable>
       </div>
     )
   }

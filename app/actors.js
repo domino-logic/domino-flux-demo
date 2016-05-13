@@ -5,22 +5,18 @@ const redisClient = require("redis").createClient();
 
 
 function createAdHandler(message, response, dispatch) {
-  if(Math.random() < .5){
-    const ad = message.content.payload
-    ad.id = uuid.v4()
-    ad.creationDate = new Date().toISOString()
-    ad.paused = Math.random() < .5
-    ad.cpm = 1 + Math.random() * 2
-    ad.type = 'Social Ad'
+  const ad = message.content.payload
+  ad.id = uuid.v4()
+  ad.creationDate = new Date().toISOString()
+  ad.paused = Math.random() < .5
+  ad.cpm = 1 + Math.random() * 2
+  ad.type = 'Social Ad'
+  ad.views = 0
 
-    redisClient.hset('ads', ad.id, JSON.stringify(ad))
+  redisClient.hset('ads', ad.id, JSON.stringify(ad))
 
-    response.ok(ad)
-    dispatch('created', ad)
-  }
-  else{
-    response.error('Error!!!')
-  }
+  response.ok(ad)
+  dispatch('created', ad)
 }
 
 function getAdsHandler(message, response) {

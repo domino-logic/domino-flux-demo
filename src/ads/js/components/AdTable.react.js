@@ -12,6 +12,7 @@ class AdTable extends React.Component {
           <td>{ad.type}</td>
           <td>{ad.creationDate}</td>
           <td>${ad.cpm.toFixed(2)}</td>
+          <td>{ad.views.toLocaleString()}</td>
           <td>
             <span className={icon + " glyphicon"}></span>
           </td>
@@ -28,6 +29,7 @@ class AdTable extends React.Component {
               <td>Type</td>
               <td>Creation Date</td>
               <td>CPM</td>
+              <td>Views</td>
               <td>Active</td>
             </tr>
           </thead>

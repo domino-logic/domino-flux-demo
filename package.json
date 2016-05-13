@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npm run watch & npm run serve",
     "watch": "watchify -v -o static/ads/js/bundle.js src/ads/js/app.js",
-    "serve": "node index.js",
+    "serve": "nodejs index.js",
     "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > js/bundle.min.js",
     "test": "jest"
   },
@@ -17,6 +17,7 @@
     "classnames": "^2.2.5",
     "domino-actor-service": "git+https://github.com/domino-logic/domino-actor-service.git",
     "domino-client-service": "git+https://github.com/domino-logic/domino-client-service.git",
+    "domino-rabbitmq-messenger": "git+https://github.com/domino-logic/domino-rabbitmq-messenger.git",
     "domino-web-service": "git+https://github.com/domino-logic/domino-web-service.git",
     "flux": "^2.1.1",
     "keymirror": "^0.1.1",

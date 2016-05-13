@@ -14,6 +14,13 @@ export function adCreated(ad){
   })
 }
 
+export function adUpdated(ad){
+  dispatch({
+    type:'ad/updated',
+    payload: ad
+  })
+}
+
 export function getAds(ad){
   domino.action('ads.get')
   .then((ads) => receivedAds(ads))
@@ -38,6 +45,7 @@ export function setAccount(account) {
 export default {
   createAd,
   adCreated,
+  adUpdated,
   setAccount,
   setTeam,
   getAds,

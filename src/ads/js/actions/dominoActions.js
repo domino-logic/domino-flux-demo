@@ -7,5 +7,8 @@ domino.register('ads.*', function(payload, type){
     case 'ads.adCreated':
       AdActions.adCreated(payload)
       break;
+    case 'ads.adUpdated':
+      AdActions.adUpdated(payload)
+      break;
   }
 })
