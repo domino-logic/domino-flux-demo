@@ -1,7 +1,5 @@
 'use strict'
 
-const DAS = require('domino-actor-service')
-const options = require('../options')
 const redisClient = require("redis").createClient()
 
 function adUpdateWorker(dispatch){

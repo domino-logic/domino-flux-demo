@@ -21,6 +21,7 @@
     "domino-web-service": "git+https://github.com/domino-logic/domino-web-service.git",
     "flux": "^2.1.1",
     "keymirror": "^0.1.1",
+    "node-uuid": "^1.4.7",
     "object-assign": "^4.1.0",
     "react": "^15.0.2",
     "react-dom": "^15.0.2",
